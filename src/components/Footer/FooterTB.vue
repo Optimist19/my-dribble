@@ -3,10 +3,14 @@
 	<div class="first-con">
 		<h3>dribbble</h3>
 		<p>
-			Dribbble is the world's leading community<br>for creatives to share, grow, and get hired
+			Dribbble is the world's leading community<br>for creatives to share, grow,<br>and get hired
 		</p>
 		<div class="media">
-
+			<a href="#"><i class="fa light fa-basketball"></i></a>
+			<a href="#"><i class="fa-brands fa-twitter"></i></a>
+			<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-instagram"></i></a>
+			<a href="#"><i class="fa-brands fa-pinterest"></i></a>
 		</div>
 	</div>
 	<div class="second-con">
@@ -45,7 +49,7 @@
 		<p>Design jobs</p>
 		<p>Designers for hire</p>
 		<p>Freelance designers for hire</p>
-		<p>tag</p>
+		<p>Tag</p>
 		<p>Places</p>
 		<p>Design assets</p>
 		<p>Dribbble Marketplace</p>
@@ -75,5 +79,48 @@ export default {
 	.flex-con{
 		display: flex;
 		justify-content: space-around;
+		font-family: 'Roboto', sans-serif;
+		font-size: 15px;
+	}
+
+
+	.flex-con .first-con p{
+		margin-bottom: 4vh;
+	}
+	.flex-con .first-con .media a{
+		color: black;
+	}
+	.flex-con .first-con .media a i{
+		margin-right: 2vw;
+	}
+
+	.second-con p:first-child{
+		font-weight: 700;
+	}
+
+	.flex-con .third-con p:first-child{
+		font-weight: 700;
+	}
+
+
+	.flex-con .third-con p:nth-child(5){
+		font-weight: 700;
+	}
+
+	.flex-con .fourth-con p:first-child{
+		font-weight: 700;
+	}
+
+	.flex-con .fifth-con p:first-child{
+		font-weight: 700;
+	}
+
+
+	.flex-con .fifth-con p:nth-child(7){
+		font-weight: 700;
+	}
+
+	.flex-con .sixth-con p:first-child{
+		font-weight: 700;
 	}
 </style>

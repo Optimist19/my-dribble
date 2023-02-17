@@ -1,7 +1,8 @@
 <template>
   <div class="user-con">
     <div>
-      <div class="grid">
+      <div class="loading" v-if="isLoading">Loading...</div>
+      <div v-else class="grid">
         <div class="user" v-for="item in data.users" :key="item">
           <div class="i-p">
             <div class="i">
@@ -23,7 +24,7 @@
       </div>
       <div class="sign">
         <p>Sign up to continue</p>
-        <p>Sign in</p>
+        <p>or sign in</p>
       </div>
       <div class="up">
         <i v-on:click="top" class="fa-sharp fa-solid fa-circle-chevron-up"></i>
@@ -37,7 +38,8 @@ export default {
   name: "BodyThree",
   data() {
     return {
-      data: ""
+      data: "",
+      isLoading: true
     };
   },
   mounted() {
@@ -47,7 +49,10 @@ export default {
       }
     })
       .then((res) => res.json())
-      .then((data) => (this.data = data));
+      .then((data) => (this.data = data))
+      .finally(()=>{
+        this.isLoading = false
+      });
   },
   methods: {
     top() {
@@ -61,9 +66,14 @@ export default {
 <style scoped>
 .user-con {
   height: 100%;
-  background-color: blue;
+  background-color: rgb(240, 240, 255);
+  position: relative;
 }
 
+.user-con .loading{
+  text-align: center;
+  font-size: 38px;
+}
 .grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -74,7 +84,7 @@ export default {
 
 .user {
   max-width: 30vw;
-  background-color: rgb(241, 241, 250);
+  background-color: rgb(231, 231, 255);
   border-radius: 20px;
 }
 
@@ -108,10 +118,12 @@ p span {
   transition: background-color 0.5s ease-in;
   cursor: pointer;
   border-radius: 20px;
+  margin-right: 3vw;
 }
 
 .user-con .sign p:last-child {
   cursor: pointer;
+  color: red;
 }
 
 .user-con .sign p:first-child:hover {
@@ -122,7 +134,10 @@ p span {
 .up {
   position: absolute;
   right: 3vw;
-  /* top: 2px; */
-  /* z-index: -1; */
+  bottom: 2vh;
 }
+
+.up i{
+    font-size: 38px;
+  }
 </style>
